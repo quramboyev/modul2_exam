@@ -1,0 +1,72 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<style>
+    html,
+    body {
+        height: 90%;
+        margin: 0;
+    }
+
+    .container-fluid {
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #4a90e2, #76b3f0);
+    color: white;
+    overflow: hidden;
+    }
+
+    .banner {
+        background: linear-gradient(135deg, #4a90e2, #76b3f0);
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: left;
+        padding: 80px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+    }
+
+
+
+    .logo {
+        max-width: 200px;
+    }
+
+    .children-img {
+        max-width: 450px;
+        position: absolute;
+        right: 10%;
+        bottom: 5%;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+<div class="container">
+    <div class="row">
+        {% block content %}
+        <div class="container-fluid banner d-flex align-items-center">
+            <div class="row w-100">
+                <div class="col-md-6">
+                    <h1>МЕРОПРИЯТИЯ<br>ОБРАЗОВАТЕЛЬНОГО<br>ПОРТАЛА</h1>
+                    <img src="{% static 'main/images/main_logo.png' %}" alt="Логотип" class="logo mt-3">
+                </div>
+                <div class="col-md-6 text-end">
+                    <img src="{% static 'main/images/kids.png' %}" alt="Дети" class="children-img">
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+</div>
+

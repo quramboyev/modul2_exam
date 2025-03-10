@@ -1,0 +1,14 @@
+/* navbar */
+.navbar-custom {
+    background-color: #f4b400; /* Золотистый цвет */
+}
+.nav-link {
+    color: black !important;
+    font-weight: bold;
+}
+.navbar-toggler {
+    border: none;
+}
+.nav-item .btn {
+    font-weight: bold;
+}
