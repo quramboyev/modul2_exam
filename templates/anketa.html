@@ -1,16 +1,75 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 
+{% block extra_css %}
+<style>
+    .banner {
+        background: radial-gradient(circle at top left, #fffbcc 40%, transparent 60%),
+                    radial-gradient(circle at top right, #fffbcc 40%, transparent 60%),
+                    #fff; /* Основной белый фон */
+        padding: 50px 20px;
+        text-align: center;
+        position: relative;
+    }
+
+
+    .banner h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .banner p {
+        font-size: 1.2rem;
+    }
+
+    .btn-custom {
+        background-color: #5b7c99;
+        color: white;
+        border-radius: 20px;
+        padding: 10px 20px;
+        border: none;
+        font-size: 16px;
+    }
+
+    .btn-custom:hover {
+        background-color: #46637a;
+    }
+
+    .hands-image {
+        position: absolute;
+        bottom: -70px; 
+        right: -30px;
+        width: 250px; 
+    }
+
+
+    .card {
+        background: linear-gradient(135deg, #f4b400, #ffcc66);
+        border-radius: 20px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    }
+</style>
+{% endblock %}
 
 <div class="container">
     <div class="row">
         {% block content %}
-        <div class="card-body">
-            <form method="post">
-                {% csrf_token %}
-                {{ form|crispy}}
-                <button type="submit" class="btn btn-success px-5">Save</button>
-            </form>
+        <div class="container banner pb-2 mt-3">
+            <h1 class="fw-bold" style="font-size: 48px;">УЧАСТИЕ В КОНКУРСЕ</h1>
+            <p style="font-size: 18px; max-width: 600px; margin: auto;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
+            <button class="btn btn-custom">подробнее</button>
+            <img src="{% static 'main/images/konkurs/hands.png' %}" alt="Руки" class="hands-image">
+        </div>
+        
+        <div class="container" style="background: linear-gradient(to bottom, #fffbcc, white);">
+            <div class="card p-4 shadow mb-5">
+                <h2 class="mb-3">Анкета</h2>
+                <form method="post">container
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
         </div>
         {% endblock %}
     </div>

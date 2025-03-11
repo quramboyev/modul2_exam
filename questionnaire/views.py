@@ -14,3 +14,9 @@ def questionnaire_view(request):
         'form': form
     })
 
+def contest_view(request):
+    colors = ['#F5C24D', '#ED6059']
+    return render(request, 'contest.html', context={
+        'colors': colors
+    })
+
